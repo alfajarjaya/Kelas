@@ -117,16 +117,14 @@ hr {
         margin-top: 20px;
     }
     .hero-section-1 {
-        background: rgb(100, 100, 100, 0.8);
-        backdrop-filter: blur(50px);
+        background: rgb(100, 100, 100, 0.5);
         color: #fff;
         padding: 20px 15px;
         border-radius: 15px;
     }
 
     .hero-section-2 {
-        background: rgb(100, 100, 100, 0.8);
-        backdrop-filter: blur(50px);
+        background: rgb(100, 100, 100, 0.5);
         color: #fff;
         padding: 10px 15px;
         border-radius: 15px;

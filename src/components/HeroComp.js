@@ -23,14 +23,13 @@ const HeroComp = () => {
     return (
         <div className="hero-png" id="home">
             <div className="hero">
-
                 <div className="min-vh-100 d-flex justify-content-center align-items-center p-0 m-0">
                     <Container>
                         <Row className="text-center">
                             <Col>
                                 <h1 className="display-3 text-white text-bold mb-4" data-aos="fade-left">
                                     <u>Hi Visitors !</u></h1>
-                                <h2 className="text-bold fw-bold fs-2 mb-4 text-warning" data-aos="fade-right">
+                                <h2 className="text-bold fw-bold fs-2 mb-4 text-warning" data-aos="fade-right" data-aos-delay="100">
                                     Welcome to <br />
                                     TKJ 2
                                 </h2>
@@ -40,7 +39,7 @@ const HeroComp = () => {
                                     className="me-2 my-5"
                                     onClick={() => scrollToSection('gallery')}
                                     data-aos="fade-up"
-                                    data-aos-delay="100"
+                                    data-aos-delay="200"
                                 >
                                     Let's Explore
                                 </Button>
@@ -50,7 +49,7 @@ const HeroComp = () => {
                             <Col className="d-flex w-100">
                                 <div className="hero-1 px-2">
                                     <a href="https://www.instagram.com/xitkj2skanesa" className="text-decoration-none">
-                                        <div className="hero-section-1 w-100">
+                                        <div className="hero-section-1 w-100" data-aos="fade-up" data-aos-delay="300">
                                             <div className="icons d-flex justify-content-between align-items-center">
                                                 <i data-feather="instagram"></i>
                                                 <i data-feather="chevron-right"></i>
@@ -64,7 +63,7 @@ const HeroComp = () => {
                                 </div>
                                 <div className="hero-2 px-2">
                                     <a href="/" className="text-decoration-none">
-                                        <div className="hero-section-2 w-100">
+                                        <div className="hero-section-2 w-100" data-aos="fade-up" data-aos-delay="400">
                                             <div className="icons d-flex justify-content-between align-items-center">
                                                 <i data-feather="globe"></i>
                                                 <i data-feather="chevron-right"></i>
@@ -75,10 +74,10 @@ const HeroComp = () => {
                                         </div>
                                     </a>
                                     <a href="#send-message" className="text-decoration-none">
-                                        <div className="hero-section-2 w-100 mt-3">
+                                        <div className="hero-section-2 w-100 mt-3" data-aos="fade-up" data-aos-delay="500">
                                             <div className="icons d-flex justify-content-between align-items-center">
                                                 <i data-feather="send"></i>
-                                                <i data-feather="chevron-down"></i>
+                                                <i data-feather="chevron-right"></i>
                                             </div>
                                             <div className="d-flex flex-column mt-5 fst-italic">
                                                 <h3>Message</h3>
