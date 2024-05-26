@@ -37,28 +37,21 @@ const BlogComp = () => {
                     <Row>
                         {showAll ? blog() : (
                             <>
-                                <Col md={4}>
+                                <Col className="d-flex justify-content-center">
                                     <div className="my-3">
-                                    </div>
-                                </Col>
-                                <Col md={4}>
-                                    <div className="my-3 bg-blog">
-                                        <img src={adit} alt="rawr2" width={"100%"} />
+                                        {/* <img src={adit} alt="rawr2" width={"100%"} />
                                         <p className="text-warning p-4 fs-5">
                                             <a href="https://www.smkn1mojokerto.sch.id/ver/1/" className="text-warning" target="_blank" rel="noopener noreferrer">SMK Negeri 1 Mojokerto </a>
                                             kembali melahirkan talenta hebat. Kali ini, salah satu putra terbaik dari cabang olahraga Gateball, Muhammad Safiqul Aditya berhasil menyabet emas untuk kategori triple campuran pada Pekan Olahraga Provinsi (PORPROV) ke-VIII yang diselenggarakan di Mojokerto Jawa Timur mulai 9 September 2023 lalu.
                                             <a href="https://www.instagram.com/p/CxXKI1pRQr7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" className="text-warning text-decoration-none" target="_blank" rel="noopener noreferrer"> Lihat Selengkapnya...</a>
-                                        </p>
-                                    </div>
-                                </Col>
-                                <Col md={4}>
-                                    <div className="my-3">
+                                        </p> */}
+                                        <iframe width="560px" height="315" src="https://www.youtube.com/embed/4xe2tHbGogo?si=xUMlUyekDSMGowDP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                 </Col>
                             </>
                         )}
                     </Row>
-                    
+
                     <Row className="justify-content-center mt-3">
                         <Col md={6} className="text-center">
                             <Button variant="outline-warning" onClick={toggleShowAll}>
