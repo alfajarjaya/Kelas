@@ -23,14 +23,7 @@ const HeroComp = () => {
     return (
         <div className="hero-png" id="home">
             <div className="hero">
-                <div className="d-flex justify-content-between align-items-center mx-5 p-5 ">
-                    <a href="/">
-                        <i data-feather="globe" color="#fff"></i>
-                    </a>
-                    <a href="https://www.instagram.com/xitkj2skanesa">
-                        <i data-feather="instagram" color="#fff"></i>
-                    </a>
-                </div>
+
                 <div className="min-vh-100 d-flex justify-content-center align-items-center p-0 m-0">
                     <Container>
                         <Row className="text-center">
@@ -51,6 +44,48 @@ const HeroComp = () => {
                                 >
                                     Let's Explore
                                 </Button>
+                            </Col>
+                        </Row>
+                        <Row className="only-mobile">
+                            <Col className="d-flex w-100">
+                                <div className="hero-1 px-2">
+                                    <a href="https://www.instagram.com/xitkj2skanesa" className="text-decoration-none">
+                                        <div className="hero-section-1 w-100">
+                                            <div className="icons d-flex justify-content-between align-items-center">
+                                                <i data-feather="instagram"></i>
+                                                <i data-feather="chevron-right"></i>
+                                            </div>
+                                            <div className="d-flex flex-column mt-5 fst-italic">
+                                                <p className="text-white-50">Follow us on</p>
+                                                <h3>Class Instagram</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div className="hero-2 px-2">
+                                    <a href="/" className="text-decoration-none">
+                                        <div className="hero-section-2 w-100">
+                                            <div className="icons d-flex justify-content-between align-items-center">
+                                                <i data-feather="globe"></i>
+                                                <i data-feather="chevron-right"></i>
+                                            </div>
+                                            <div className="d-flex flex-column mt-5 fst-italic">
+                                                <h3>Website</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="#send-message" className="text-decoration-none">
+                                        <div className="hero-section-2 w-100 mt-3">
+                                            <div className="icons d-flex justify-content-between align-items-center">
+                                                <i data-feather="send"></i>
+                                                <i data-feather="chevron-down"></i>
+                                            </div>
+                                            <div className="d-flex flex-column mt-5 fst-italic">
+                                                <h3>Message</h3>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
                             </Col>
                         </Row>
                     </Container>

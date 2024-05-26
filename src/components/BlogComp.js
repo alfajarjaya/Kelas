@@ -9,7 +9,11 @@ const BlogComp = () => {
             <>
                 <Container>
                     <Row>
-
+                        <Col className="d-flex justify-content-center">
+                            <div className="my-3">
+                                <iframe width="350px" height="210" src="https://www.youtube.com/embed/4xe2tHbGogo?si=xUMlUyekDSMGowDP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            </div>
+                        </Col>
                     </Row>
                 </Container>
             </>
@@ -45,7 +49,7 @@ const BlogComp = () => {
                                             kembali melahirkan talenta hebat. Kali ini, salah satu putra terbaik dari cabang olahraga Gateball, Muhammad Safiqul Aditya berhasil menyabet emas untuk kategori triple campuran pada Pekan Olahraga Provinsi (PORPROV) ke-VIII yang diselenggarakan di Mojokerto Jawa Timur mulai 9 September 2023 lalu.
                                             <a href="https://www.instagram.com/p/CxXKI1pRQr7/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==" className="text-warning text-decoration-none" target="_blank" rel="noopener noreferrer"> Lihat Selengkapnya...</a>
                                         </p> */}
-                                        <iframe width="560px" height="315" src="https://www.youtube.com/embed/4xe2tHbGogo?si=xUMlUyekDSMGowDP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                        <iframe width="350px" height="210" src="https://www.youtube.com/embed/4xe2tHbGogo?si=xUMlUyekDSMGowDP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                                     </div>
                                 </Col>
                             </>

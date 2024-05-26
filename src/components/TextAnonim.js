@@ -99,7 +99,7 @@ function TextAnonim() {
                                             rows={6}
                                             value={message}
                                             onChange={handleMessageChange}
-                                            placeholder="Ketik pesan Anda di sini..."
+                                            placeholder="Ketik di sini..."
                                             className='input-text-anonim'
                                         />
                                     </Form.Group>
