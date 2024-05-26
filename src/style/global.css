@@ -71,20 +71,21 @@ hr {
     border-bottom: 1px solid #fff;
 }
 
-.textarea {
+.input-text-anonim {
     background: #404040;
     color: #fff;
     font-size: 15px;
     outline: none;
+    padding: 12px 10px;
 }
 
-.textarea:focus {
+.input-text-anonim:focus {
     font-size: 15px;
     border: 1px solid #ffff;
 
 }
 
-.textarea::placeholder {
+.input-text-anonim::placeholder {
     color: #fff;
     font-size: 15px;
 }
@@ -92,4 +93,21 @@ hr {
 .bg-blog {
     background: #404040;
     cursor: pointer;
+}
+
+.container-message {
+    background: #353535;
+    border-radius: 20px;
+    padding-bottom: 48px;
+}
+
+.comment {
+    height: 300px;
+    overflow: auto;
+    background: #505050;
+    border-radius: 20px;
+}
+
+.comment-body {
+    border-radius: 10px;
 }

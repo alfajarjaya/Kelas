@@ -1,29 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { openDB } from 'idb';
+import { db } from './firebase';
+import { collection, addDoc, getDocs } from 'firebase/firestore';
+import Swal from 'sweetalert2';
 import '../style/global.css';
-import { Container, Row, Col, Form, Button } from 'react-bootstrap';
-
-async function initDB() {
-    const db = await openDB('comments-db', 1, {
-        upgrade(db) {
-            db.createObjectStore('comments', { keyPath: 'id', autoIncrement: true });
-        },
-    });
-    return db;
-}
+import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
+import usersIcons from '../assets/users.svg';
 
 function TextAnonim() {
     const [message, setMessage] = useState('');
     const [messages, setMessages] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
 
     useEffect(() => {
-        (async () => {
-            const db = await initDB();
-            const tx = db.transaction('comments', 'readonly');
-            const store = tx.objectStore('comments');
-            const allComments = await store.getAll();
-            setMessages(allComments.map(comment => comment.text));
-        })();
+        const fetchMessages = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, 'comments'));
+                const comments = querySnapshot.docs.map(doc => doc.data().text);
+                setMessages(comments);
+            } catch (error) {
+                console.error('Error fetching messages:', error);
+            }
+        };
+
+        fetchMessages();
     }, []);
 
     const handleMessageChange = (e) => {
@@ -32,14 +31,37 @@ function TextAnonim() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         if (message.trim()) {
-            const db = await initDB();
-            const tx = db.transaction('comments', 'readwrite');
-            const store = tx.objectStore('comments');
-            await store.add({ text: message });
-            const allComments = await store.getAll();
-            setMessages(allComments.map(comment => comment.text));
-            setMessage('');
+            try {
+                await addDoc(collection(db, 'comments'), { text: message });
+                // db.collection('comments').add({ text: message });
+                const querySnapshot = await getDocs(collection(db, 'comments'));
+                const comments = querySnapshot.docs.map(doc => doc.data().text);
+                setMessages(comments);
+                setMessage('');
+                setIsLoading(false);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Berhasil',
+                    text: 'Pesan berhasil dikirim!'
+                });
+            } catch (error) {
+                console.error('Error adding message:', error);
+                setIsLoading(false);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Gagal',
+                    text: 'Terjadi kesalahan saat mengirim pesan. Silakan coba lagi.'
+                });
+            }
+        } else {
+            setIsLoading(false);
+            Swal.fire({
+                icon: 'warning',
+                title: 'Peringatan',
+                text: 'Tidak ada pesan yang dikirim.'
+            });
         }
     };
 
@@ -52,42 +74,45 @@ function TextAnonim() {
                         <div className="border-bottom mb-4"></div>
                     </Col>
                 </Row>
-                <Row>
-                    <Col>
-                        <Form onSubmit={handleSubmit}>
-                            <div className="d-flex justify-content-center align-items-center">
-                                <Form.Group controlId="formMessage" className='w-50'>
-                                    <Form.Control
-                                        as="textarea"
-                                        rows={6}
-                                        value={message}
-                                        onChange={handleMessageChange}
-                                        placeholder="Ketik pesan Anda di sini..."
-                                        className='textarea'
-                                    />
-                                </Form.Group>
+                <div className="container-message">
+                    <Row>
+                        <Col>
+                            <div className="d-flex justify-content-center align-items-center mb-5">
+                                <div className="w-100 comment p-5">
+                                    {messages.map((msg, index) => (
+                                        <div key={index} className='border comment-body p-3 mx-5 my-2 bg-dark text-white d-flex align-items-center'>
+                                            <img src={usersIcons} alt="icons" />
+                                            <p className='text-white m-0 mx-3'>{msg}</p>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                            <div className="d-flex justify-content-center align-items-center">
-                                <Button variant="outline-warning" type="submit" className="mt-5 px-5 py-3">
-                                    Kirim Pesan Anda
-                                </Button>
-                            </div>
-                        </Form>
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <div className="d-flex justify-content-center align-items-center py-3">
-                            <div className="w-50">
-                                {messages.map((msg, index) => (
-                                    <div key={index} className='border p-3 my-2 bg-light'>
-                                        <p className='text-dark'>{msg}</p>
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    </Col>
-                </Row>
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col>
+                            <Form onSubmit={handleSubmit}>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <Form.Group controlId="formMessage" className='w-50'>
+                                        <Form.Control
+                                            as="input"
+                                            rows={6}
+                                            value={message}
+                                            onChange={handleMessageChange}
+                                            placeholder="Ketik pesan Anda di sini..."
+                                            className='input-text-anonim'
+                                        />
+                                    </Form.Group>
+                                </div>
+                                <div className="d-flex justify-content-center align-items-center">
+                                    <Button variant="outline-warning" type="submit" className="mt-5 px-5 py-3" disabled={isLoading}>
+                                        {isLoading ? <Spinner animation="border" size="sm" /> : 'Kirim Pesan Anda'}
+                                    </Button>
+                                </div>
+                            </Form>
+                        </Col>
+                    </Row>
+                </div>
             </Container>
         </div>
     );
