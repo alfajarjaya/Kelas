@@ -35,7 +35,6 @@ function TextAnonim() {
         if (message.trim()) {
             try {
                 await addDoc(collection(db, 'comments'), { text: message });
-                // db.collection('comments').add({ text: message });
                 const querySnapshot = await getDocs(collection(db, 'comments'));
                 const comments = querySnapshot.docs.map(doc => doc.data().text);
                 setMessages(comments);

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import '../style/global.css';
-import adit from '../assets/img/blog/adit.jpg';
 
 const BlogComp = () => {
     const blog = () => {
@@ -27,8 +26,8 @@ const BlogComp = () => {
     };
 
     return (
-        <div className="w-body pt-5">
-            <div className="d-flex-align-items-center min-vh-100 py-5 mt-5" id="blog">
+        <div className="w-body pt-5" id="blog">
+            <div className="d-flex-align-items-center min-vh-100 mt-5">
                 <Container className="py-5">
                     <Row>
                         <Col>

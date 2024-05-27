@@ -23,16 +23,16 @@ const FaqComp = () => {
                         <h5>About Us</h5>
                         <ul className="list-unstyled">
                             <li>
-                                <a href="#home" className="text-warning text-decoration-none">Home</a>
+                                <a href="#home" className="text-white-50 text-decoration-none">Home</a>
                             </li>
                             <li>
-                                <a href="#gallery" className="text-warning text-decoration-none" >Gallery</a>
+                                <a href="#gallery" className="text-white-50 text-decoration-none" >Gallery</a>
                             </li>
                             <li>
-                                <a href="#blog" className="text-warning text-decoration-none">Blog</a>
+                                <a href="#blog" className="text-white-50 text-decoration-none">Blog</a>
                             </li>
                             <li>
-                                <a href="#send-message" className="text-warning text-decoration-none">Send Message</a>
+                                <a href="#send-message" className="text-white-50 text-decoration-none">Send Message</a>
                             </li>
                         </ul>
                     </Col>
