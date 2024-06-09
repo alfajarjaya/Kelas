@@ -144,3 +144,20 @@ hr {
         display: none;
     }
 }
+
+.add-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+}
+
+.label-add-img, .label-show-img {
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    padding: 15px 40px; 
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+}

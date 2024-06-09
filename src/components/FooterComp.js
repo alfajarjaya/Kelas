@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import feather from 'feather-icons';
 import logo from '../assets/img/logo/logo.jpg';
 
@@ -7,6 +7,14 @@ const FaqComp = () => {
     useEffect(() => {
         feather.replace()
     }, []);
+
+    const scrollY = (id) => {
+        const sect = document.getElementById(id);
+
+        if (sect) {
+            sect.scrollIntoView({ behavior: "smooth" });
+        }
+    }
 
     return (
         <footer className="bg-dark text-white">
@@ -23,16 +31,24 @@ const FaqComp = () => {
                         <h5>About Us</h5>
                         <ul className="list-unstyled">
                             <li>
-                                <a href="#home" className="text-white-50 text-decoration-none">Home</a>
+                                <Button variant="outline-light" onClick={() => scrollY("home")} className="border-0">
+                                    <h4 className="m-0 p-0">Home</h4>
+                                </Button>
                             </li>
                             <li>
-                                <a href="#gallery" className="text-white-50 text-decoration-none" >Gallery</a>
+                                <Button variant="outline-light" onClick={() => scrollY("gallery")} className="border-0">
+                                    <h4 className="m-0 p-0">Gallery</h4>
+                                </Button>
                             </li>
                             <li>
-                                <a href="#blog" className="text-white-50 text-decoration-none">Blog</a>
+                                <Button variant="outline-light" onClick={() => scrollY("blog")} className="border-0">
+                                    <h4 className="m-0 p-0">Blog</h4>
+                                </Button>
                             </li>
                             <li>
-                                <a href="#send-message" className="text-white-50 text-decoration-none">Send Message</a>
+                                <Button variant="outline-light" onClick={() => scrollY("send-message")} className="border-0">
+                                    <h4 className="m-0 p-0">Send Message</h4>
+                                </Button>
                             </li>
                         </ul>
                     </Col>
@@ -56,7 +72,7 @@ const FaqComp = () => {
                         <ul className="list-unstyled">
                             <li>
                                 <a href="https://alfajjar.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white-50 text-decoration-none">
-                                    bang_jarrrz
+                                    jarrz
                                 </a>
                             </li>
                         </ul>

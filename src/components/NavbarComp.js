@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Navbar, Nav, Container } from "react-bootstrap";
+import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const NavbarComp = () => {
@@ -11,6 +11,15 @@ const NavbarComp = () => {
         } else {
             setChangeColor(false);
         }
+    }
+
+    const scollY = (id) => {
+        const sec = document.getElementById(id);
+
+        if (sec) {
+            sec.scrollIntoView({ behavior: "smooth" });
+        }
+
     }
 
     useEffect(() => {
@@ -29,10 +38,18 @@ const NavbarComp = () => {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="ms-auto text-center">
-                            <Nav.Link href="#home" className="mx-2">Home</Nav.Link>
-                            <Nav.Link href="#gallery" className="mx-2">Galery</Nav.Link>
-                            <Nav.Link href="#blog" className="mx-2">Blog</Nav.Link>
-                            <Nav.Link href="#send-message" className="mx-2">Send Message</Nav.Link>
+                            <Button variant="outline-light" onClick={() => scollY("home")} className="mx-2 py-2 px-4 border-0">
+                                <h4 className="m-0 p-0">Home</h4>
+                            </Button>
+                            <Button variant="outline-light" onClick={() => scollY("gallery")} className="mx-2 py-2 px-4 border-0">
+                                <h4 className="m-0 p-0">Gallery</h4>
+                            </Button>
+                            <Button variant="outline-light" onClick={() => scollY("blog")} className="mx-2 py-2 px-4 border-0">
+                                <h4 className="m-0 p-0">Blog</h4>
+                            </Button>
+                            <Button variant="outline-light" onClick={() => scollY("send-message")} className="mx-2 py-2 px-4 border-0">
+                                <h4 className="m-0 p-0">Send Message</h4>
+                            </Button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

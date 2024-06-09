@@ -23,20 +23,28 @@ const HeroComp = () => {
     return (
         <div className="hero-png" id="home">
             <div className="hero">
+                <div className="d-flex justify-content-between align-items-center mx-5 p-5 ">
+                    <a href="/">
+                        <i data-feather="globe" color="#fff"></i>
+                    </a>
+                    <a href="https://www.instagram.com/xitkj2skanesa">
+                        <i data-feather="instagram" color="#fff"></i>
+                    </a>
+                </div>
                 <div className="min-vh-100 d-flex justify-content-center align-items-center p-0 m-0">
                     <Container>
                         <Row className="text-center">
                             <Col>
-                                <h1 className="display-3 text-white text-bold mb-4" data-aos="fade-left">
+                                <h1 className="display-3 text-white text-bold mb-3" data-aos="fade-left">
                                     <u>Hi Visitors !</u></h1>
-                                <h2 className="text-bold fw-bold fs-2 mb-4 text-warning" data-aos="fade-right" data-aos-delay="100">
+                                <h2 className="text-bold fw-bold fs-2 mb-2 text-warning" data-aos="fade-right" data-aos-delay="100">
                                     Welcome to <br />
                                     TKJ 2
                                 </h2>
                                 <Button
                                     variant="warning"
                                     size="lg"
-                                    className="me-2 my-5"
+                                    className="me-2 my-5 px-5 py-3 fs-5"
                                     onClick={() => scrollToSection('gallery')}
                                     data-aos="fade-up"
                                     data-aos-delay="200"
