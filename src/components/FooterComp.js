@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import feather from 'feather-icons';
-import logo from '../assets/img/logo/logo.jpg';
+import logo from '../assets/img/logo/logo.png';
 
 const FaqComp = () => {
     useEffect(() => {
@@ -17,12 +17,12 @@ const FaqComp = () => {
     }
 
     return (
-        <footer className="bg-dark text-white">
+        <footer className="footer text-white">
             <Container>
                 <Row className="justify-content-evenly pt-5">
                     <Col md={1}>
                         <div>
-                            <a href="#home">
+                            <a href="javascript:void(0)" onClick={() => window.location.reload()} >
                                 <img src={logo} alt="Logo Kelas" width={50} style={{ borderRadius: 100 }} />
                             </a>
                         </div>
@@ -31,22 +31,22 @@ const FaqComp = () => {
                         <h5>About Us</h5>
                         <ul className="list-unstyled">
                             <li>
-                                <Button variant="outline-light" onClick={() => scrollY("home")} className="border-0">
+                                <Button variant="outline-light" onClick={() => scrollY("home")} className="border-0 bg-transparent p-0 m-0">
                                     <h4 className="m-0 p-0">Home</h4>
                                 </Button>
                             </li>
                             <li>
-                                <Button variant="outline-light" onClick={() => scrollY("gallery")} className="border-0">
+                                <Button variant="outline-light" onClick={() => scrollY("gallery")} className="border-0 bg-transparent p-0 m-0">
                                     <h4 className="m-0 p-0">Gallery</h4>
                                 </Button>
                             </li>
                             <li>
-                                <Button variant="outline-light" onClick={() => scrollY("blog")} className="border-0">
+                                <Button variant="outline-light" onClick={() => scrollY("blog")} className="border-0 bg-transparent p-0 m-0">
                                     <h4 className="m-0 p-0">Blog</h4>
                                 </Button>
                             </li>
                             <li>
-                                <Button variant="outline-light" onClick={() => scrollY("send-message")} className="border-0">
+                                <Button variant="outline-light" onClick={() => scrollY("send-message")} className="border-0 bg-transparent p-0 m-0">
                                     <h4 className="m-0 p-0">Send Message</h4>
                                 </Button>
                             </li>
@@ -71,7 +71,7 @@ const FaqComp = () => {
                         <h5>Create by</h5>
                         <ul className="list-unstyled">
                             <li>
-                                <a href="https://alfajjar.vercel.app" target="_blank" rel="noopener noreferrer" className="text-white-50 text-decoration-none">
+                                <a href="https://fajarsite.my.id" target="_blank" rel="noopener noreferrer" className="text-white-50 text-decoration-none">
                                     jarrz
                                 </a>
                             </li>

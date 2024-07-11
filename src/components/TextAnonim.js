@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import '../style/global.css';
 import { Container, Row, Col, Form, Button, Spinner } from 'react-bootstrap';
 import usersIcons from '../assets/users.svg';
+import { Telegram } from '@mui/icons-material';
 
 function TextAnonim() {
     const [message, setMessage] = useState('');
@@ -69,7 +70,7 @@ function TextAnonim() {
             <Container>
                 <Row>
                     <Col>
-                        <h1 className="text-center text-warning fs-1 fw-bold">Kirim pesan kepada pengunjung.</h1>
+                        <h1 className="text-center text-warning fs-1 fw-bold">Send Anonymous Messages.</h1>
                         <div className="border-bottom mb-4"></div>
                     </Col>
                 </Row>
@@ -90,24 +91,20 @@ function TextAnonim() {
                     </Row>
                     <Row>
                         <Col>
-                            <Form onSubmit={handleSubmit}>
-                                <div className="d-flex justify-content-center align-items-center">
-                                    <Form.Group controlId="formMessage" className='w-50'>
-                                        <Form.Control
-                                            as="input"
-                                            rows={6}
-                                            value={message}
-                                            onChange={handleMessageChange}
-                                            placeholder="Ketik di sini..."
-                                            className='input-text-anonim'
-                                        />
-                                    </Form.Group>
-                                </div>
-                                <div className="d-flex justify-content-center align-items-center">
-                                    <Button variant="outline-warning" type="submit" className="mt-5 px-5 py-3" disabled={isLoading}>
-                                        {isLoading ? <Spinner animation="border" size="sm" /> : 'Kirim Pesan Anda'}
-                                    </Button>
-                                </div>
+                            <Form onSubmit={handleSubmit} className='d-flex justify-content-evenly align-items-center'>
+                                <Form.Group controlId="formMessage" className='w-50'>
+                                    <Form.Control
+                                        as="input"
+                                        rows={6}
+                                        value={message}
+                                        onChange={handleMessageChange}
+                                        placeholder="Write your message here..."
+                                        className='input-text-anonim rounded-4'
+                                    />
+                                </Form.Group>
+                                <Button variant="outline-warning" type="submit" className="p-4 rounded-4" disabled={isLoading}>
+                                    {isLoading ? <Spinner animation="border" size="sm" /> : <><span>Send </span><Telegram /></>}
+                                </Button>
                             </Form>
                         </Col>
                     </Row>

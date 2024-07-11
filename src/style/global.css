@@ -67,6 +67,15 @@ hr {
     background: #202020;
 }
 
+.footer {
+    background: linear-gradient(to top, #0000ff 0%, #000080 30%, #000040 60%, #202020 100%);
+
+}
+
+/* .blog {
+    background: linear-gradient(-135deg , #202002, #202020, #202020 ,#202020, #202020, #202020, darkviolet);
+} */
+
 .border-bottom {
     border-bottom: 1px solid #fff;
 }
@@ -160,4 +169,12 @@ hr {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.6);
     cursor: pointer;
+}
+
+.cp {
+    cursor: pointer;
+}
+
+.light {
+    background-color: #e9e9e9;
 }

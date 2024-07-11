@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import logo from '../assets/img/logo/logo.png';
 
 const NavbarComp = () => {
 
@@ -32,7 +33,8 @@ const NavbarComp = () => {
         <div className="sticky-top w-body">
             <Navbar variant="dark" expand="lg" className={changeColor ? "color-active" : ""}>
                 <Container>
-                    <Navbar.Brand href="#home" className="fw-bold fs-5">
+                    <Navbar.Brand href="/" className="fw-bold fs-5">
+                        <img src={logo} alt="logo" width="35px" className="mx-2"/>
                         TKJ 2 SKANESA
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -45,10 +47,7 @@ const NavbarComp = () => {
                                 <h4 className="m-0 p-0">Gallery</h4>
                             </Button>
                             <Button variant="outline-light" onClick={() => scollY("blog")} className="mx-2 py-2 px-4 border-0">
-                                <h4 className="m-0 p-0">Blog</h4>
-                            </Button>
-                            <Button variant="outline-light" onClick={() => scollY("send-message")} className="mx-2 py-2 px-4 border-0">
-                                <h4 className="m-0 p-0">Send Message</h4>
+                                <h4 className="m-0 p-0">Stucture</h4>
                             </Button>
                         </Nav>
                     </Navbar.Collapse>

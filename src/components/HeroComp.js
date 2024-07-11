@@ -5,6 +5,7 @@ import '../../node_modules/aos/dist/aos.css';
 import '../style/global.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import feather from 'feather-icons';
+import { RocketLaunch ,MusicNote, Telegram } from "@mui/icons-material";
 
 const HeroComp = () => {
     const scrollToSection = (id) => {
@@ -19,6 +20,7 @@ const HeroComp = () => {
         AOS.refresh();
         feather.replace();
     }, []);
+
 
     return (
         <div className="hero-png" id="home">
@@ -41,16 +43,30 @@ const HeroComp = () => {
                                     Welcome to <br />
                                     TKJ 2
                                 </h2>
-                                <Button
-                                    variant="warning"
-                                    size="lg"
-                                    className="me-2 my-5 px-5 py-3 fs-5"
-                                    onClick={() => scrollToSection('gallery')}
-                                    data-aos="fade-up"
-                                    data-aos-delay="200"
-                                >
-                                    Let's Explore
-                                </Button>
+                                <div className="d-flex align-items-center justify-content-center my-4">
+                                    <Button
+                                        variant="warning"
+                                        size="lg"
+                                        className="me-2 my-5 mx-1 px-5 py-3 fs-4 d-flex align-items-center"
+                                        onClick={() => scrollToSection('send-message')}
+                                        data-aos="fade-up"
+                                        data-aos-delay="200"
+                                    >
+                                        Send a Message
+                                        <Telegram fontSize="40px"/>
+                                    </Button>
+                                    <Button
+                                        variant="light"
+                                        size="lg"
+                                        className="me-2 my-5 mx-1 px-5 py-3 fs-4 d-flex align-items-center"
+                                        onClick={() => scrollToSection('gallery')}
+                                        data-aos="fade-up"
+                                        data-aos-delay="300"
+                                    >   
+                                        <RocketLaunch />
+                                        Let's Explore
+                                    </Button>
+                                </div>
                             </Col>
                         </Row>
                         <Row className="only-mobile">
@@ -70,14 +86,14 @@ const HeroComp = () => {
                                     </a>
                                 </div>
                                 <div className="hero-2 px-2">
-                                    <a href="/" className="text-decoration-none">
+                                    <a href="https://www.tiktok.com/@xitkjskanesa" className="text-decoration-none">
                                         <div className="hero-section-2 w-100" data-aos="fade-up" data-aos-delay="400">
                                             <div className="icons d-flex justify-content-between align-items-center">
-                                                <i data-feather="globe"></i>
+                                                <MusicNote style={{ fontSize: 30 }} />
                                                 <i data-feather="chevron-right"></i>
                                             </div>
                                             <div className="d-flex flex-column mt-5 fst-italic">
-                                                <h3>Website</h3>
+                                                <h3>Tiktok</h3>
                                             </div>
                                         </div>
                                     </a>
