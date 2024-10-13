@@ -13,7 +13,7 @@ function TextAnonim() {
     useEffect(() => {
         const fetchMessages = async () => {
             try {
-                const response = await fetch('http://api.alfajjar.my.id/tkj_skanesa/data_komentar/text-get');
+                const response = await fetch('https://api.alfajjar.my.id/tkj_skanesa/data_komentar/text-get');
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }
@@ -37,7 +37,7 @@ function TextAnonim() {
         setIsLoading(true);
         if (message.trim()) {
             try {
-                const response = await fetch('http://api.alfajjar.my.id/tkj_skanesa/data_komentar/text-post', {
+                const response = await fetch('https://api.alfajjar.my.id/tkj_skanesa/data_komentar/text-post', {
                     method: 'POST',
                     body: JSON.stringify({ text: message }),
                     headers: { 'Content-type': 'application/json; charset=UTF-8' }
