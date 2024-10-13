@@ -18,7 +18,7 @@ function MediaPhone() {
                 <Row className="d-flex flex-column justify-content-center">
                     <Col className="d-flex flex-column justify-content-center align-items-center">
                         <p className="text-white text-center m-0 p-0 fw-bold" data-aos="fade-up" data-aos-duration="400">Wali Kelas</p>
-                        <p className="light rounded-4 py-2 m-0 fw-bold text-dark text-center" style={{ width: "60%" }} data-aos="fade-up" data-aos-duration="450">Bambang Sugianto S.Pd</p>
+                        <p className="light rounded-4 py-2 m-0 fw-bold text-dark text-center" style={{ width: "60%" }} data-aos="fade-up" data-aos-duration="450">Pak Mansur</p>
                         <img src={LineIcons.verticalLine} alt="" data-aos="fade-up" data-aos-duration="500"/>
                         <Circle sx={{ color: "#fff" }} fontSize="large" data-aos="fade-up" data-aos-duration="500"/>
                     </Col>
